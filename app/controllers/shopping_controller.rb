@@ -4,6 +4,12 @@ class ShoppingController < ApplicationController
   end
 
   def create
+    shop = Shop.new(permit)
+    if shop.save
+      @msg = 'valores salvos'
+    else
+      @msg = shop.errors.messages
+    end
   end
 
   def edit
@@ -14,4 +20,12 @@ class ShoppingController < ApplicationController
 
   def destroy
   end
+
+
+private
+
+  def permit
+    params['shop'].permit(:name, :adress)
+  end
+
 end
