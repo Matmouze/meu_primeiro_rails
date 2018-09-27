@@ -1,4 +1,13 @@
 class ShoppingController < ApplicationController
+  def index
+      @shops = Shop.all
+    
+  end
+  
+  def showOne
+    @shopId = Shop.find_by(id: params['id'])
+  end
+
   def new
     @shop = Shop.new
   end
@@ -13,7 +22,8 @@ class ShoppingController < ApplicationController
   end
 
   def edit
-  end
+    @shopId = Shop.find_by(id: params['id'])
+  end  
 
   def update
   end
@@ -25,7 +35,7 @@ class ShoppingController < ApplicationController
 private
 
   def permit
-    params['shop'].permit(:name, :adress)
+    params['shop'].permit(:name, :address)
   end
 
 end

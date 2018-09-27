@@ -1,0 +1,16 @@
+Todos os shoppings
+<table border="2px" style="width: 50%">
+	<tr>
+		<td>Nome</td>
+		<td>Alterar</td>
+		<td>Remover</td>
+	</tr>
+
+<% @shops.each do |a| %>
+	<tr>
+		<td><%= link_to a.name, shopping_showOne_path(a.id) %></td>
+		<td><%= link_to 'alterar', shopping_edit_path(a.id) %></td>                                       
+		<td>Remover</td>
+	</tr>
+<% end %>
+</table>
