@@ -1,5 +1,5 @@
 Todos os shoppings
-<table border="2px" style="width: 50%">
+<table border="10px" style="width: 50%">
 	<tr>
 		<td>Nome</td>
 		<td>Alterar</td>
@@ -9,8 +9,11 @@ Todos os shoppings
 <% @shops.each do |a| %>
 	<tr>
 		<td><%= link_to a.name, shopping_showOne_path(a.id) %></td>
-		<td><%= link_to 'alterar', shopping_edit_path(a.id) %></td>                                       
-		<td>Remover</td>
+		<td><%= link_to 'Alterar', shopping_edit_path(a.id) %></td>                                       
+		<td><%= link_to 'Deletar', shopping_destroy_path(a.id), :method => 'delete' %></td>
 	</tr>
 <% end %>
+	<tr>
+		<td><%= link_to 'Crie um novo registro de Shopping', shopping_new_path %></td>
+	</tr>
 </table>
