@@ -1,0 +1,19 @@
+<p>Lista de Lojas do Shopping</p>
+<table border="10px" style="width: 50%">
+	<tr>
+		<td>Nome</td>
+		<td>Alterar</td>
+		<td>Remover</td>
+	</tr>
+
+<% @stores.each do |b| %>
+	<tr>
+		<td><%= link_to b.name, shopping_showOne_path(b.id) %></td>
+		<td><%= link_to 'Alterar', shopping_edit_path(b.id) %></td>                                       
+		<td><%= link_to 'Deletar', shopping_destroy_path(b.id), :method => 'delete' %></td>
+	</tr>
+<% end %>
+	<tr>
+		<td><%= link_to 'Adicionar uma Loja a este Shopping', stores_new_path %></td>
+	</tr>
+</table>

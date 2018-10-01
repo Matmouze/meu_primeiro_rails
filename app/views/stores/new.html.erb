@@ -1,0 +1,11 @@
+<h1>Cadastro Loja</h1>
+<%= form_for @store, url:stores_create_path do |f| %>
+	<%= f.label :name, 'Nome' %>
+	<%= f.text_field :name %>
+	<%= f.label :floor, 'Piso' %>
+	<%= f.text_field :floor %> 
+	<% hidden_field_tag :id, :idshopping %>
+	<%= f.submit 'Enviar' %>
+<% end %>
+
+<%= link_to 'Ver Lista de Shoppings', shopping_index_path %>

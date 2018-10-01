@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_24_165105) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.integer "floor"
+    t.integer "idshopping"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
