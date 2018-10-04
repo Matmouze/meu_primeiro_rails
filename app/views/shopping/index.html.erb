@@ -7,12 +7,12 @@ Todos os shoppings
 		<td>Remover</td>
 	</tr>
 
-<% @stores.each do |a| %>
+<% @shops.each do |a| %>
 	<tr>
-		<td><%= link_to a.name, store_showOne_path(a.id) %></td>
-		<td><%= link_to 'Lista  de Lojas', </td>
-		<td><%= link_to 'Alterar', store_edit_path(a.id) %></td>                                       
-		<td><%= link_to 'Deletar', store_destroy_path(a.id), :method => 'delete' %></td>
+		<td><%= link_to a.name, shopping_showOne_path(a.id) %></td>
+		<td><%= link_to 'Lista  de Lojas', stores_index_path(a.id) %></td>
+		<td><%= link_to 'Alterar', shopping_edit_path(a.id) %></td>                                       
+		<td><%= link_to 'Deletar', shopping_destroy_path(a.id), :method => 'delete' %></td>
 	</tr>
 <% end %>
 	<tr>

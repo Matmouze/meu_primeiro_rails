@@ -4,7 +4,7 @@
 	<%= f.text_field :name %>
 	<%= f.label :floor, 'Piso' %>
 	<%= f.text_field :floor %> 
-	<% hidden_field_tag :id, :idshopping %>
+	<%= for @shop %><%=  %>
 	<%= f.submit 'Enviar' %>
 <% end %>
 
